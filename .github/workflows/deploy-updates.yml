@@ -5,6 +5,15 @@ jobs:
   job:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 23
+          cache: "npm"
+
+      - name: Add Environment Variables File
+        run: echo 'VITE_API_URL=https://api.govindsahu.me \n VITE_GOOGLE_AUTH_CLIENT_ID=1080347041084-ql6qrkks5ucvunc56fu3qgkkbogniuic.apps.googleusercontent.com' > .env
+
       - name: Clone GitHub Repository
         uses: actions/checkout@v6
       - run: npm ci --no-audit --no-fund
