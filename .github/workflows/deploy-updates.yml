@@ -2,8 +2,12 @@ name: Deploy StorageApp Frontend
 on: push
 
 jobs:
-  job:
+  setup-repository:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - run: npm ci --no-audit --no-fund
+      - run: npm run test
+      - run: npm run build
       - run: ls -a
+      - run: aws -v
