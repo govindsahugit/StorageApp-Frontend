@@ -101,7 +101,7 @@ function DirectoryView({ adminView, isPublic }) {
       setPath(data.path);
 
       // Set directory name
-      setDirectoryName(dirId ? data.name : "My StorageApp Drive");
+      setDirectoryName(dirId ? data.name : "My Drive");
 
       // Reverse directories and files so new items show on top
       setDirectoriesList([...data.directories]);
