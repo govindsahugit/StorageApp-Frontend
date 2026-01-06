@@ -104,7 +104,7 @@ function DirectoryView({ adminView, isPublic }) {
       setDirectoryName(dirId ? data.name : "My Drive");
 
       // Reverse directories and files so new items show on top
-      setDirectoriesList([...data.directories])
+      setDirectoriesList([...data.directories]);
       setFilesList([...data.files]);
     } catch (error) {
       setErrorMessage(error.message);
